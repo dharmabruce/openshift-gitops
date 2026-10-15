@@ -1,0 +1,17 @@
+# lens-spark.dharmabruce.com — one-page download site for the LensSpark beta.
+# Like dharmabruce.yaml, the manifests live under the dharmabruce identity in
+# github.com/dharmabruce/lens-spark-site (k8s/), pulled in via a per-app source
+# override; that repo is on the platform AppProject sourceRepos allow-list.
+#
+# Stateful app: prune disabled so a gate/source removal can never cascade into
+# deleting the namespace and the site-content PVC (page + APK, copied in by
+# the site repo's publish.sh).
+spec:
+  source:
+    repoURL: https://github.com/dharmabruce/lens-spark-site.git
+    path: k8s
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
