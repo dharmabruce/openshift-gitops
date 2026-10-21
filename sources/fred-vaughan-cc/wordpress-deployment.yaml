@@ -25,10 +25,11 @@ spec:
       serviceAccountName: wordpress
       containers:
         - name: wordpress
-          # Pinned to the same WordPress core version (7.0) that was running
-          # on cloud.vaughan.cc, on a supported PHP (the Fedora 34 host was
-          # stuck on EOL PHP 7.4).
-          image: wordpress:7.0-php8.3-apache
+          # WordPress core lives on the PVC (the entrypoint never overwrites an
+          # existing install), so this tag only selects the PHP/Apache runtime.
+          # Moved off 7.0 (no longer rebuilt upstream) to 7.1 to pick up PHP
+          # 8.3.36 for php2shell (CVE-2026-109618/109619).
+          image: wordpress:7.1-php8.3-apache
           ports:
             - containerPort: 80
               name: http
