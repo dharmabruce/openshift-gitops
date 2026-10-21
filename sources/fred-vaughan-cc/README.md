@@ -7,7 +7,7 @@ WordPress site <https://fred.vaughan.cc>, migrated from the Fedora 34 host
 
 | Component | Image | Storage |
 |---|---|---|
-| `wordpress` | `wordpress:7.0-php8.3-apache` (official) | `wordpress-html` PVC (20Gi) — full docroot incl. ~11Gi uploads |
+| `wordpress` | `wordpress:7.1-php8.3-apache` (official) | `wordpress-html` PVC (20Gi) — full docroot incl. ~11Gi uploads |
 | `mariadb` | `registry.redhat.io/rhel9/mariadb-1011:1` | `mariadb-data` PVC (5Gi) |
 
 Database credentials live in the `fred-db` SealedSecret (keys follow the
