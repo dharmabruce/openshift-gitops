@@ -4,4 +4,3 @@ resources:
   - oauth.yaml
   - platform-admins-group.yaml
   - sean-vaughan-cc.yaml
-  - svaughan-redhat-com.yaml

@@ -7,4 +7,3 @@ users:
   # Provider uses mappingMethod: lookup, so each member needs a pre-provisioned
   # User + Identity (see oauth.yaml and the per-user manifests) before login works.
   - sean@vaughan.cc
-  - svaughan@redhat.com
