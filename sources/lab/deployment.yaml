@@ -30,6 +30,12 @@ spec:
             - start-notebook.py
             - --IdentityProvider.token=
             - --ServerApp.port=8888
+          # Declared so the readiness probe's port is a known container port
+          # (kube-linter readiness-port). The Service still targets only the
+          # oauth-proxy on 4180, so this exposes nothing new.
+          ports:
+            - containerPort: 8888
+              name: jupyter
           env:
             # GPU services on the bazzite box (physical host, RTX 3090).
             - name: OLLAMA_URL
